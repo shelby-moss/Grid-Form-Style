@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="This is the website I will use for my final project">
+  <meta name="description" content="This is my form page">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -19,27 +19,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <title>Home</title>
+  <link rel="stylesheet" href="../styles.css">
+  <title>Form</title>
 </head>
 
 <body>
-  <div class="hero">
-    <picture>
-      <source srcset="images/1600px.jpg" media="(min-width: 901px)">
-      <source srcset="images/900px.jpg" media="(min-width: 501px)">
-      <source srcset="images/500px.jpg" media="(max-width: 500px)">
-
-      <img src="1600px.jpg" alt="The spires of Capitol Reef">
-    </picture>
-    <div class="overlay">
-      <div>
-        <h1>Shelby's Photography</h1>
-        <p>A collection of my best work</p>
-      </div>
-    </div>
-  </div>
-
   <div class="main-menu">
     <div class="menu-icon">
       <svg viewbox="0 0 60 60" width="60px" height="60px">
@@ -50,63 +34,88 @@
 
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="about/index.html">About</a></li>
-        <li><a href="form/index.html">Form</a></li>
+        <li><a href="#">Form</a></li>
+        <li><a href="../about/index.html">About</a></li>
+        <li><a href="../index.html">Home</a></li>
       </ul>
     </nav>
   </div>
 
-  <!--card #1-->
-  <div class="cards">
-    <div class="card">
-      <a>
-        <img src="images/B&W-card-400px.jpg" loading="lazy" alt="black and white images">
-        <p>
-          Black & White
-        </p>
-      </a>
-    </div>
+  <main class="form">
+    <h1>Form</h1>
+    <!--copied form code-edit-->
+    <h2>Photography survey</h2>
+    <section>
+      <div class="svg">
+        <svg viewBox="0 0 120 120" width="100" height="100">
+          <circle cx="60" cy="60" r="10" stroke="grey" fill="transparent" stroke-width="1" />
+          <circle cx="60" cy="60" r="20" stroke="grey" fill="transparent" stroke-width="1" />
+          <line x1="0" y1="60" x2="120" y2="60" stroke="black" stroke-width="0.5" />
+        </svg>
+      </div>
 
-    <!--card #2-->
-    <div class="card">
-      <a>
-        <img src="images/Detail-card-400px.jpg" loading="lazy" alt="detailed images">
-        <p>
-          Details
-        </p>
-      </a>
-    </div>
+      <form>
+        <label for="name">Full name:</label>
+        <input type="text" name="name" id="name">
 
-    <!--card #3-->
-    <div class="card">
-      <a>
-        <img src="images/nature-card-400px.jpg" loading="lazy" alt="nature images">
-        <p>
-          Nature
-        </p>
-      </a>
-    </div>
+        <label for="email">Email address:</label>
+        <input type="email" name="email" id="email" required>
 
-    <!--card #4-->
-    <div class="card">
-      <a>
-        <img src="images/portrait-card-400px.jpg" loading="lazy" alt="portrait images">
-        <p>
-          Portrait
-        </p>
-      </a>
-    </div>
+        <label for="phone">Phone number:</label>
+        <input type="tel" name="phone" id="phone">
 
-  </div>
+        <fieldset>
+          <legend>What types of photography do you love? (Check all that apply)</legend>
 
-  <main>
-    <svg viewBox="0 0 120 120" width="100" height="100">
-      <circle cx="60" cy="60" r="10" stroke="grey" fill="transparent" stroke-width="1" />
-      <circle cx="60" cy="60" r="20" stroke="grey" fill="transparent" stroke-width="1" />
-      <line x1="0" y1="60" x2="120" y2="60" stroke="black" stroke-width="0.5" />
-    </svg>
+          <input type="checkbox" id="Black-and-White" name="photography" value="B&W">
+          <label for="Black-and-White">Black and White</label>
 
+          <input type="checkbox" id="Nature" name="photography" value="Nature">
+          <label for="Nature">Nature</label>
+
+          <input type="checkbox" id="Details" name="photography" value="Details">
+          <label for="Details">Detailed (close up)</label>
+
+          <input type="checkbox" id="Portrait" name="photography" value="Portrait">
+          <label for="Portrait">Portrait</label>
+
+          <input type="checkbox" id="Landscape" name="photography" value="Landscape">
+          <label for="Landscape">Landscape</label>
+
+          <input type="checkbox" id="Candid" name="photography" value="Candid">
+          <label for="Candid">Candid</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Which type of photography do you want to see more of on this website?</legend>
+
+          <input type="radio" name="preference" id="Black-and-White2" value="B&W">
+          <label for="Black-and-White2">Black and White</label>
+
+          <input type="radio" name="preference" id="Details2" value="Details">
+          <label for="Details2">Detailed (close up)</label>
+
+          <input type="radio" name="preference" id="Nature2" value="Nature">
+          <label for="Nature2">Nature</label>
+
+          <input type="radio" name="preference" id="Portrait2" value="Portrait">
+          <label for="Portrait2">Portrait</label>
+        </fieldset>
+
+        <!-- the placeholder attribute appears when no text is present. For accessibilty reasons, don't use a placeholder instead of a label  -->
+        <label for="comments">Leave any other comments below:</label>
+        <textarea name="comments" id="comments" rows="10" placeholder="Comments"></textarea>
+
+        <!-- You will often see <input type="submit"> instead of <button type="submit">. They are the same functionally, but <button> is newer and more easily styled.    -->
+        <button type="submit">SUBMIT NOW</button>
+
+      </form>
+    </section>
+    <!--end copied form code-->
+
+
+
+    <!--<div class="loader"></div>-->
 
     <footer>
       <p>Email me at shelby@email.com</p>
@@ -120,7 +129,6 @@
       });
     });
   </script>
-
 </body>
 
 </html>
